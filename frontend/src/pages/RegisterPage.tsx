@@ -92,7 +92,7 @@ function RegisterPage() {
                             <div className="benefit-icon">
                                 <img
                                     src="/images/chart.png"
-                                    alt="Başvuru süreci"
+                                    alt="Şeffaf süreç"
                                 />
                             </div>
 
