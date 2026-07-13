@@ -1,0 +1,686 @@
+/* =========================================================
+   GENEL AYARLAR
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =========================================================
+   SAYFANIN TAMAMI VE ARKA PLAN
+========================================================= */
+
+.bank-login-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #102d57;
+
+    background-color: #f4f1ea;
+}
+
+
+/* Arka plan görseli */
+.bank-login-page::before {
+    content: "";
+
+    position: absolute;
+    inset: -8px;
+
+    background-image: url("/images/login-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(1.4px);
+    transform: scale(1.02);
+
+    opacity: 0.92;
+
+    z-index: 0;
+}
+
+
+/* Arka planın üzerindeki açık katman */
+.bank-login-page::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.14),
+            rgba(255, 252, 245, 0.34),
+            rgba(255, 255, 255, 0.5));
+
+    z-index: 1;
+}
+
+
+/* İçerikleri arka planın üstüne çıkarır */
+.bank-login-header,
+.bank-login-content,
+.bank-login-footer {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ÜST BAŞLIK
+========================================================= */
+
+
+
+
+
+
+
+/* =========================================================
+   ORTA ALAN
+========================================================= */
+
+.bank-login-content {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 390px 1fr;
+    align-items: center;
+    justify-items: center;
+
+    padding: 110px 58px 75px;
+}
+
+
+/* =========================================================
+   SOL MARKA ALANI
+========================================================= */
+
+.bank-login-brand {
+    justify-self: start;
+
+    width: 430px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateX(-10px);
+}
+
+.brand-logo {
+    width: 420px;
+    max-width: none;
+    max-height: 500px;
+
+    display: block;
+
+    object-fit: contain;
+
+    mix-blend-mode: multiply;
+
+    filter:
+        brightness(1.03) contrast(1.12) saturate(1.1) drop-shadow(0 16px 30px rgba(16, 44, 80, 0.2));
+}
+
+.bank-login-brand h2 {
+    margin: 8px 0 0;
+
+    font-size: 56px;
+    line-height: 0.94;
+    font-weight: 800;
+    text-align: center;
+
+    color: #15365f;
+
+    text-shadow:
+        0 2px 8px rgba(255, 255, 255, 0.72),
+        0 3px 8px rgba(16, 44, 80, 0.08);
+}
+
+.bank-login-brand h2 span {
+    display: block;
+
+    color: #d0a448;
+}
+
+
+/* Eski geçici logo alanı kullanılırsa */
+.brand-logo-placeholder {
+    width: 320px;
+    height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 14px solid #15365f;
+    border-radius: 50%;
+
+    font-size: 90px;
+    font-weight: 800;
+
+    color: #d0a448;
+    background-color: rgba(255, 255, 255, 0.45);
+
+    box-shadow: 0 10px 25px rgba(15, 41, 72, 0.15);
+}
+
+
+/* =========================================================
+   SAĞ GİRİŞ ALANI
+========================================================= */
+
+.bank-login-area {
+    grid-column: 2;
+
+    width: 360px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+/* =========================================================
+   GİRİŞ KARTI
+========================================================= */
+
+.bank-login-card {
+    padding: 30px 30px 28px;
+
+    border: 1.5px solid rgba(199, 158, 71, 0.92);
+    border-radius: 15px;
+
+    background-color: rgba(255, 252, 247, 0.8);
+
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+
+    box-shadow:
+        0 16px 38px rgba(16, 44, 80, 0.17),
+        inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+
+/* Kart içindeki küçük logoyu gizler */
+.card-logo,
+.card-logo-placeholder {
+    display: none;
+}
+
+.bank-login-card h2 {
+    margin: 0 0 2px;
+
+    text-align: center;
+
+    font-size: 26px;
+    font-weight: 800;
+
+    color: #15365f;
+}
+
+.bank-login-card h3 {
+    margin: 4px 0 15px;
+
+    text-align: center;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    color: #c99b3e;
+}
+
+.bank-login-card>p {
+    margin: 0 0 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: #2c3440;
+}
+
+
+/* =========================================================
+   FORM ALANI
+========================================================= */
+
+.bank-login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.bank-login-card form>label {
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #15365f;
+}
+
+.bank-login-card input[type="text"],
+.bank-login-card input[type="password"] {
+    width: 100%;
+    height: 43px;
+
+    margin-bottom: 16px;
+    padding: 0 14px;
+
+    border: 1px solid rgba(185, 151, 81, 0.88);
+    border-radius: 9px;
+    outline: none;
+
+    font-size: 13px;
+
+    color: #202833;
+    background-color: rgba(255, 255, 255, 0.84);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.bank-login-card input[type="text"]::placeholder,
+.bank-login-card input[type="password"]::placeholder {
+    color: #707887;
+}
+
+.bank-login-card input[type="text"]:focus,
+.bank-login-card input[type="password"]:focus {
+    border-color: #15365f;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(21, 54, 95, 0.11);
+}
+
+
+/* =========================================================
+   BENİ HATIRLA VE ŞİFREMİ UNUTTUM
+========================================================= */
+
+.login-options {
+    margin-top: -7px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 12px;
+
+    color: #303844;
+}
+
+.remember-me input {
+    width: 15px;
+    height: 15px;
+
+    accent-color: #c99b3e;
+}
+
+.forgot-password {
+    padding: 0;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 12px;
+
+    color: #303844;
+    background: transparent;
+}
+
+.forgot-password:hover {
+    color: #b98930;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   GİRİŞ YAP BUTONU
+========================================================= */
+
+.login-submit-button {
+    height: 45px;
+
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #e0bd68;
+
+    background:
+        linear-gradient(90deg,
+            #102f5a,
+            #173f72);
+
+    box-shadow: 0 6px 14px rgba(16, 47, 90, 0.14);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.login-submit-button:hover {
+    filter: brightness(1.06);
+
+    box-shadow: 0 8px 18px rgba(16, 47, 90, 0.22);
+}
+
+.login-submit-button:active {
+    transform: scale(0.985);
+}
+
+
+/* =========================================================
+   KAYIT OL KUTUSU
+========================================================= */
+
+.register-box {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    border: 1.5px solid rgba(199, 158, 71, 0.92);
+    border-radius: 14px;
+
+    background-color: rgba(255, 252, 247, 0.74);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 24px rgba(16, 44, 80, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.register-box span {
+    font-size: 13px;
+
+    color: #303844;
+}
+
+.register-box button {
+    padding: 0;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #c99b3e;
+    background: transparent;
+}
+
+.register-box button:hover {
+    color: #b5862c;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.bank-login-footer {
+    position: absolute;
+
+    bottom: 18px;
+    left: 50%;
+
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateX(-50%);
+
+    font-size: 13px;
+
+    color: #b88d3b;
+
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.85);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   DÜŞÜK YÜKSEKLİKLİ MASAÜSTÜ EKRANLARI
+========================================================= */
+
+@media (max-height: 800px) and (min-width: 901px) {
+    .bank-login-header {
+        top: 24px;
+    }
+
+    .bank-login-header h1 {
+        font-size: 42px;
+    }
+
+    .bank-login-content {
+        grid-template-columns: 1fr 350px 1fr;
+
+        padding-top: 88px;
+        padding-bottom: 48px;
+    }
+
+    .bank-login-brand {
+        width: 370px;
+    }
+
+    .brand-logo {
+        width: 345px;
+        max-height: 390px;
+    }
+
+    .bank-login-brand h2 {
+        font-size: 48px;
+    }
+
+    .bank-login-area {
+        width: 350px;
+    }
+
+    .bank-login-card {
+        padding: 22px 27px 23px;
+    }
+
+    .bank-login-card h3 {
+        margin-top: 15px;
+    }
+
+    .bank-login-card>p {
+        margin-bottom: 15px;
+    }
+
+    .bank-login-card input[type="text"],
+    .bank-login-card input[type="password"] {
+        height: 39px;
+        margin-bottom: 13px;
+    }
+
+    .login-submit-button {
+        height: 41px;
+    }
+
+    .register-box {
+        min-height: 54px;
+    }
+
+    .bank-login-footer {
+        bottom: 10px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .bank-login-page {
+        height: auto;
+        min-height: 100vh;
+
+        overflow-y: auto;
+    }
+
+    .bank-login-header {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        height: 100px;
+        min-height: 100px;
+
+        transform: none;
+    }
+
+    .bank-login-header h1 {
+        font-size: 38px;
+    }
+
+    .bank-login-content {
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 28px;
+
+        padding: 10px 20px 30px;
+    }
+
+    .bank-login-brand {
+        width: 100%;
+
+        transform: none;
+    }
+
+    .brand-logo {
+        width: 230px;
+    }
+
+    .bank-login-brand h2 {
+        font-size: 40px;
+    }
+
+    .bank-login-area {
+        width: min(100%, 380px);
+    }
+
+    .bank-login-footer {
+        position: relative;
+
+        bottom: auto;
+        left: auto;
+
+        min-height: 55px;
+
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 480px) {
+    .bank-login-header {
+        height: 82px;
+        min-height: 82px;
+    }
+
+    .bank-login-header h1 {
+        font-size: 29px;
+    }
+
+    .bank-login-content {
+        padding: 8px 14px 24px;
+    }
+
+    .brand-logo {
+        width: 180px;
+    }
+
+    .bank-login-brand h2 {
+        font-size: 34px;
+    }
+
+    .bank-login-card {
+        padding: 24px 18px 22px;
+    }
+
+    .bank-login-card h3 {
+        font-size: 21px;
+    }
+
+    .login-options {
+        gap: 10px;
+    }
+
+    .register-box {
+        padding: 10px;
+
+        flex-wrap: wrap;
+    }
+}
+
+.card-logo {
+    width: 72px;
+    height: 72px;
+
+    display: block;
+
+    margin: 0 auto 12px;
+
+    object-fit: contain;
+}

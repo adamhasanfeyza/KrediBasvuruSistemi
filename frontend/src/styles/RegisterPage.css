@@ -1,0 +1,1038 @@
+/* =========================================================
+   GENEL AYARLAR
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   SAYFANIN TAMAMI
+========================================================= */
+
+.register-page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: #10284a;
+    background-color: #f5f8fc;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.register-header {
+    height: 72px;
+    min-height: 72px;
+
+    padding: 8px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #dce3ed;
+    background-color: #ffffff;
+}
+
+.register-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.register-header-logo img {
+    width: 58px;
+    height: 58px;
+
+    display: block;
+    object-fit: contain;
+}
+
+.register-header-brand {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.register-header-brand strong {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 7px;
+
+    color: #102f5d;
+}
+
+.register-header-brand span {
+    margin-top: 5px;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 9px;
+
+    color: #c49735;
+}
+
+.register-login-link {
+    padding: 6px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #102f5d;
+    background: transparent;
+}
+
+.register-login-link:hover {
+    color: #c49735;
+}
+
+.login-icon {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid currentColor;
+    border-radius: 50%;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   ANA YERLEŞİM
+========================================================= */
+
+.register-content {
+    width: min(1540px, calc(100% - 44px));
+    height: calc(100vh - 88px);
+
+    margin: 8px auto;
+
+    display: grid;
+    grid-template-columns: minmax(390px, 0.78fr) minmax(650px, 1.35fr);
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SOL BİLGİ PANELİ
+========================================================= */
+
+.register-info-panel {
+    height: 100%;
+    min-height: 0;
+
+    padding: 20px 28px;
+
+    overflow: hidden;
+
+    border: 1px solid #dce3ed;
+    border-radius: 14px;
+
+    background:
+        radial-gradient(circle at 82% 15%,
+            rgba(218, 227, 241, 0.72),
+            transparent 22%),
+        radial-gradient(circle at 15% 52%,
+            rgba(229, 235, 245, 0.82),
+            transparent 18%),
+        linear-gradient(145deg, #f8faff, #f0f5fb);
+}
+
+.register-info-panel h1 {
+    margin: 0;
+
+    font-size: clamp(30px, 2.35vw, 40px);
+    line-height: 1.1;
+    font-weight: 800;
+
+    color: #102f5d;
+}
+
+.register-info-description {
+    max-width: 440px;
+
+    margin: 10px 0 2px;
+
+    font-size: 14px;
+    line-height: 1.45;
+
+    color: #647188;
+}
+
+
+/* =========================================================
+   SOL TANITIM GÖRSELİ
+========================================================= */
+
+.register-illustration {
+    width: 100%;
+    height: 180px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-illustration img {
+    width: 100%;
+    max-width: 340px;
+    height: 100%;
+    max-height: 176px;
+
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   AVANTAJLAR
+========================================================= */
+
+.register-benefits {
+    width: 100%;
+    margin-top: 0;
+}
+
+.benefit-item {
+    width: 100%;
+    min-height: 54px;
+
+    padding: 6px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    border-bottom: 1px solid #dce3ed;
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid #e1e7ef;
+    border-radius: 50%;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 4px 11px rgba(16, 47, 93, 0.08);
+}
+
+.benefit-icon img {
+    width: 27px;
+    height: 27px;
+
+    max-width: 27px;
+    max-height: 27px;
+
+    display: block;
+    object-fit: contain;
+}
+
+.benefit-item>div:last-child {
+    min-width: 0;
+}
+
+.benefit-item h3 {
+    margin: 0 0 2px;
+
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #102f5d;
+}
+
+.benefit-item p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.3;
+
+    color: #748198;
+}
+
+
+/* =========================================================
+   SAĞ FORM PANELİ
+========================================================= */
+
+.register-form-panel {
+    height: 100%;
+    min-height: 0;
+
+    padding: 18px 26px;
+
+    overflow: hidden;
+
+    border: 1px solid #dce3ed;
+    border-radius: 14px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 8px 28px rgba(26, 49, 82, 0.05);
+}
+
+.register-form-heading h2 {
+    margin: 0 0 3px;
+
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 800;
+
+    color: #102f5d;
+}
+
+.register-form-heading p {
+    margin: 0 0 11px;
+
+    font-size: 13px;
+
+    color: #778196;
+}
+
+
+/* =========================================================
+   FORM DÜZENİ
+========================================================= */
+
+.register-form {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 18px;
+}
+
+.form-group {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #102f5d;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #cfd8e5;
+    border-radius: 8px;
+    outline: none;
+
+    color: #26364d;
+    background-color: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input {
+    height: 36px;
+    padding: 0 12px;
+}
+
+.form-group textarea {
+    height: 46px;
+    min-height: 46px;
+
+    padding: 9px 12px;
+
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.phone-input input::placeholder,
+.money-input input::placeholder {
+    color: #98a4b7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.phone-input:focus-within,
+.money-input:focus-within {
+    border-color: #b58c37;
+    box-shadow: 0 0 0 3px rgba(181, 140, 55, 0.12);
+}
+
+.form-group-full {
+    margin: 9px 0;
+}
+
+
+/* =========================================================
+   TELEFON ALANI
+========================================================= */
+
+.phone-input {
+    width: 100%;
+    height: 36px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    border: 1px solid #cfd8e5;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.phone-input select {
+    width: 96px;
+    padding: 0 11px;
+
+    border: none;
+    border-right: 1px solid #d7dee8;
+    outline: none;
+
+    color: #26364d;
+    background-color: #ffffff;
+}
+
+.phone-input input {
+    min-width: 0;
+    height: 100%;
+
+    flex: 1;
+
+    padding: 0 12px;
+
+    border: none;
+    outline: none;
+
+    color: #26364d;
+    background-color: transparent;
+}
+
+
+/* =========================================================
+   PARA ALANLARI
+========================================================= */
+
+.money-input {
+    width: 100%;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    border: 1px solid #cfd8e5;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.money-input input {
+    min-width: 0;
+    height: 100%;
+
+    flex: 1;
+
+    padding: 0 12px;
+
+    border: none;
+    outline: none;
+
+    color: #26364d;
+    background-color: transparent;
+}
+
+.money-input span {
+    padding: 0 12px;
+
+    font-weight: 700;
+
+    color: #68758a;
+}
+
+
+/* Number input oklarını gizler */
+.money-input input::-webkit-inner-spin-button,
+.money-input input::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+}
+
+
+/* =========================================================
+   KVKK
+========================================================= */
+
+.kvkk-checkbox {
+    margin: 9px 0 8px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    line-height: 1.3;
+
+    color: #68768d;
+}
+
+.kvkk-checkbox input {
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    accent-color: #c49735;
+}
+
+.kvkk-checkbox strong {
+    color: #b5862d;
+}
+
+
+/* =========================================================
+   HESAP OLUŞTUR BUTONU
+========================================================= */
+
+.register-submit-button {
+    width: 100%;
+    height: 38px;
+
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #d8b253;
+    background: linear-gradient(90deg, #09275d, #123b7d);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.register-submit-button:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 6px 16px rgba(15, 52, 118, 0.2);
+}
+
+.register-submit-button:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================================================
+   ALT GİRİŞ BAĞLANTISI
+========================================================= */
+
+.register-bottom-login {
+    margin-top: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    font-size: 12px;
+
+    color: #778196;
+}
+
+.register-bottom-login button {
+    padding: 0;
+
+    border: none;
+    cursor: pointer;
+
+    font-weight: 700;
+
+    color: #b5862d;
+    background: transparent;
+}
+
+.register-bottom-login button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   YÜKSEKLİĞİ DAHA DÜŞÜK MASAÜSTÜ EKRANLARI
+========================================================= */
+
+/* =========================================================
+   YÜKSEKLİĞİ DAHA DÜŞÜK MASAÜSTÜ EKRANLARI
+   İçerikler büyütülmüş hâlde tek ekrana sığdırılır.
+========================================================= */
+
+@media (max-height: 760px) and (min-width: 1051px) {
+    .register-header {
+        height: 68px;
+        min-height: 68px;
+
+        padding: 6px 30px;
+    }
+
+    .register-header-logo img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .register-header-brand strong {
+        font-size: 27px;
+        letter-spacing: 7px;
+    }
+
+    .register-header-brand span {
+        margin-top: 4px;
+
+        font-size: 14px;
+        letter-spacing: 8px;
+    }
+
+    .register-login-link {
+        font-size: 15px;
+    }
+
+    .register-content {
+        width: min(1540px, calc(100% - 44px));
+        height: calc(100vh - 80px);
+
+        margin: 6px auto;
+
+        gap: 20px;
+    }
+
+    /* Sol panel */
+
+    .register-info-panel {
+        height: 100%;
+
+        padding: 16px 28px;
+    }
+
+    .register-info-panel h1 {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    .register-info-description {
+        margin: 8px 0 2px;
+
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .register-illustration {
+        height: 175px;
+
+        margin: 0;
+    }
+
+    .register-illustration img {
+        width: 100%;
+        max-width: 350px;
+        max-height: 170px;
+
+        object-fit: contain;
+    }
+
+    .register-benefits {
+        margin-top: 0;
+    }
+
+    .benefit-item {
+        min-height: 54px;
+
+        padding: 5px 0;
+
+        gap: 13px;
+    }
+
+    .benefit-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+
+    .benefit-icon img {
+        width: 27px;
+        height: 27px;
+
+        max-width: 27px;
+        max-height: 27px;
+    }
+
+    .benefit-item h3 {
+        margin: 0 0 2px;
+
+        font-size: 14px;
+    }
+
+    .benefit-item p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    /* Sağ form paneli */
+
+    .register-form-panel {
+        height: 100%;
+
+        padding: 14px 24px;
+    }
+
+    .register-form-heading h2 {
+        margin-bottom: 3px;
+
+        font-size: 34px;
+    }
+
+    .register-form-heading p {
+        margin-bottom: 9px;
+
+        font-size: 13px;
+    }
+
+    .form-grid {
+        gap: 7px 18px;
+    }
+
+    .form-group label {
+        margin-bottom: 3px;
+
+        font-size: 12px;
+    }
+
+    .form-group input {
+        height: 36px;
+
+        padding: 0 12px;
+    }
+
+    .phone-input {
+        height: 36px;
+    }
+
+    .money-input {
+        height: 36px;
+    }
+
+    .form-group-full {
+        margin: 7px 0;
+    }
+
+    .form-group textarea {
+        height: 46px;
+        min-height: 46px;
+
+        padding: 9px 12px;
+    }
+
+    .kvkk-checkbox {
+        margin: 7px 0 6px;
+
+        gap: 8px;
+
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    .kvkk-checkbox input {
+        width: 15px;
+        height: 15px;
+    }
+
+    .register-submit-button {
+        height: 38px;
+
+        font-size: 14px;
+    }
+
+    .register-bottom-login {
+        margin-top: 4px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   TABLET VE KÜÇÜK EKRANLAR
+   Bu ekranlarda içerik alt alta geçer ve kaydırma açılır.
+========================================================= */
+
+@media (max-width: 1050px) {
+    .register-page {
+        height: auto;
+        min-height: 100vh;
+
+        overflow-y: auto;
+    }
+
+    .register-content {
+        width: min(920px, calc(100% - 30px));
+        height: auto;
+
+        margin: 15px auto;
+
+        grid-template-columns: 1fr;
+    }
+
+    .register-info-panel,
+    .register-form-panel {
+        height: auto;
+
+        overflow: visible;
+    }
+
+    .register-info-panel {
+        padding: 28px;
+    }
+
+    .register-illustration {
+        height: 230px;
+    }
+
+    .register-illustration img {
+        max-width: 440px;
+        max-height: 225px;
+    }
+
+    .benefit-item {
+        min-height: 65px;
+        padding: 9px 0;
+    }
+
+    .register-form-panel {
+        padding: 26px;
+    }
+
+    .form-group input,
+    .phone-input,
+    .money-input {
+        height: 42px;
+    }
+
+    .form-group textarea {
+        height: 60px;
+        min-height: 60px;
+    }
+
+    .register-submit-button {
+        height: 44px;
+    }
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 700px) {
+    .register-header {
+        height: 68px;
+        min-height: 68px;
+
+        padding: 8px 16px;
+    }
+
+    .register-header-logo img {
+        width: 47px;
+        height: 47px;
+    }
+
+    .register-header-brand strong {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .register-header-brand span {
+        font-size: 11px;
+        letter-spacing: 5px;
+    }
+
+    .register-login-link {
+        font-size: 13px;
+    }
+
+    .login-icon {
+        width: 26px;
+        height: 26px;
+
+        font-size: 14px;
+    }
+
+    .register-content {
+        width: calc(100% - 20px);
+
+        gap: 14px;
+    }
+
+    .register-info-panel,
+    .register-form-panel {
+        padding: 21px 17px;
+    }
+
+    .register-info-panel h1 {
+        font-size: 29px;
+    }
+
+    .register-info-description {
+        font-size: 14px;
+    }
+
+    .register-form-heading h2 {
+        font-size: 27px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .form-group-empty {
+        display: none;
+    }
+
+    .form-group-full {
+        margin: 14px 0;
+    }
+
+    .kvkk-checkbox {
+        margin: 15px 0 12px;
+
+        font-size: 12px;
+    }
+
+    .register-bottom-login {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   ÇOK KÜÇÜK TELEFONLAR
+========================================================= */
+
+@media (max-width: 430px) {
+    .register-header-brand {
+        display: none;
+    }
+
+    .register-content {
+        width: calc(100% - 14px);
+    }
+
+    .register-info-panel,
+    .register-form-panel {
+        padding: 18px 14px;
+    }
+
+    .register-info-panel h1 {
+        font-size: 26px;
+    }
+
+    .register-illustration {
+        height: 190px;
+    }
+
+    .benefit-item {
+        gap: 10px;
+    }
+
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .benefit-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .register-bottom-login {
+        flex-wrap: wrap;
+    }
+}

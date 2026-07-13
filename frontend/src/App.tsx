@@ -1,11 +1,14 @@
-import Layout from "./components/layout/Layout";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
-  return (
+  const path = window.location.pathname;
 
-    <Layout />
+  if (path === "/register") {
+    return <RegisterPage />;
+  }
 
-  );
+  return <LoginPage />;
 }
 
 export default App;
